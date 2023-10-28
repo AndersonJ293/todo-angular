@@ -1,0 +1,10 @@
+<select
+  name="options"
+  id="options"
+  [(ngModel)]="selected"
+  (click)="changeSelected()"
+>
+  <option *ngFor="let item of selectOptions" value="{{ item }}">
+    {{ item }}
+  </option>
+</select>

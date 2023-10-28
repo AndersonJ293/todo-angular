@@ -1,0 +1,11 @@
+<div class="container">
+  <app-add-task *ngIf="opened"></app-add-task>
+
+  <app-tasks></app-tasks>
+
+  <div class="sideBar">
+    <app-side-bar></app-side-bar>
+  </div>
+</div>
+
+<router-outlet></router-outlet>

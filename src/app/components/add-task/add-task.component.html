@@ -1,0 +1,50 @@
+<div class="container">
+  <div class="content">
+    <div class="titleBar">
+      <h2>{{ formMode }} Tarefa</h2>
+      <button (click)="closeModal()">X</button>
+    </div>
+
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <div class="formInput">
+        <label for="title">Titulo</label>
+        <input type="text" id="title" name="title" formControlName="title" />
+      </div>
+
+      <div class="formInput">
+        <label for="description">Descrição</label>
+        <textarea
+          name="description"
+          id="description"
+          formControlName="description"
+        ></textarea>
+      </div>
+
+      <div class="formInput">
+        <label for="expectedConclusion">Conclusão</label>
+        <input
+          type="date"
+          id="expectedConclusion"
+          name="expectedConclusion"
+          formControlName="expectedConclusion"
+        />
+      </div>
+
+      <div class="formInput">
+        <label for="price">Preço</label>
+        <input type="text" name="price" id="price" formControlName="price" />
+      </div>
+
+      <div class="formInput" *ngIf="formMode === 'Editar'">
+        <label for="status">Status</label>
+        <select name="status" id="status" formControlName="status">
+          <option *ngFor="let option of selectOptions" value="{{ option }}">
+            {{ option }}
+          </option>
+        </select>
+      </div>
+
+      <button type="submit">Salvar</button>
+    </form>
+  </div>
+</div>

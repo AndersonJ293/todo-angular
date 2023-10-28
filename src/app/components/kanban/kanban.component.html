@@ -1,0 +1,13 @@
+<div class="kanbanContainer">
+  <div class="filter">
+    <app-filter-tasks
+      (onFilterChange)="getSelectedFilter($event)"
+    ></app-filter-tasks>
+  </div>
+  <div class="columns">
+    <app-kanban-column
+      *ngFor="let option of filter"
+      [itemName]="option"
+    ></app-kanban-column>
+  </div>
+</div>

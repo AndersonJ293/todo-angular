@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="taskDetail">
+    <p class="title">Título</p>
+    <p>{{ selectedItem.title }}</p>
+    <p class="title">Descrição</p>
+    <p>{{ selectedItem.description }}</p>
+    <p class="title">Conclusão Esperada</p>
+    <p>{{ selectedItem.expectedConclusion }}</p>
+    <p class="title">Preço</p>
+    <p>{{ selectedItem.price }}</p>
+    <p class="title">Criado Em</p>
+    <p>{{ selectedItem.createdAt }}</p>
+    <p class="title">Status</p>
+    <p>{{ selectedItem.status }}</p>
+  </div>
+  <button class="editButton" (click)="editItem()">Editar</button>
+</div>

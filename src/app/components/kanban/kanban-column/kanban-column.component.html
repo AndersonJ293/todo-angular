@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="title">
+    <h2>{{ itemName }}</h2>
+  </div>
+  <div class="content">
+    <ng-container *ngFor="let task of tasks">
+      <ng-container *ngIf="task.status === itemName">
+        <app-kanban-item [task]="task"></app-kanban-item>
+      </ng-container>
+    </ng-container>
+  </div>
+</div>
