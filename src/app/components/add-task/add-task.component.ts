@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Tasks } from 'src/app/data/tasks';
 import { Task } from 'src/app/models/task';
 import { TaskModalService } from 'src/app/services/taskModal.service';
+import { dateLessTodayValidator } from 'src/app/validators/dateLessToday.validator';
 
 @Component({
   selector: 'app-add-task',
@@ -13,7 +14,7 @@ export class AddTaskComponent implements OnInit {
   form: FormGroup = this.formBuilder.group({
     title: ['', [Validators.required]],
     description: ['', [Validators.required]],
-    expectedConclusion: ['', [Validators.required]],
+    expectedConclusion: ['', [Validators.required, dateLessTodayValidator()]],
     price: ['', [Validators.required]],
     status: [''],
   });

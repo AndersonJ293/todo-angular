@@ -5,7 +5,7 @@
       <button (click)="closeModal()">X</button>
     </div>
 
-    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <form [formGroup]="form" (ngSubmit)="onSubmit()" autocomplete="off">
       <div class="inputContainer">
         <div class="formInput">
           <label for="title">Titulo</label>
@@ -47,15 +47,17 @@
         </div>
 
         <div class="formInput">
-          <label for="expectedConclusion">Conclusão Esperada</label>
+          <label for="expectedConclusion">Previsão de Conclusão</label>
           <input
             type="text"
             id="expectedConclusion"
             name="expectedConclusion"
             formControlName="expectedConclusion"
+            appDateMask
+            maxlength="10"
             [placeholder]="
               form.get('expectedConclusion')?.hasError('required')
-                ? 'Conslusão é obrigatória'
+                ? 'Previsão de Conclusão é obrigatória'
                 : ''
             "
             [ngStyle]="
@@ -64,12 +66,18 @@
                 : { border: '1px solid black' }
             "
           />
+          <p
+            class="erro"
+            *ngIf="form.get('expectedConclusion')?.hasError('dateLessToday')"
+          >
+            Data não pode ser menor que o dia atual.
+          </p>
         </div>
 
         <div class="formInput">
           <label for="price">Preço</label>
           <input
-            type="text"
+            type="number"
             name="price"
             id="price"
             formControlName="price"

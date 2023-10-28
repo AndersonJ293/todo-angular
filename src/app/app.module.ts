@@ -15,6 +15,8 @@ import { TaskDetailComponent } from './components/side-bar/task-detail/task-deta
 import { LogsComponent } from './components/side-bar/logs/logs.component';
 import { ItemService } from './services/item.service';
 import { TaskModalService } from './services/taskModal.service';
+import { DateLessThanTodayDirective } from './directives/date-less-than-today.directive';
+import { DateMaskDirective } from './directives/date-mask.directive';
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,6 +29,8 @@ import { TaskModalService } from './services/taskModal.service';
     SideBarComponent,
     TaskDetailComponent,
     LogsComponent,
+    DateLessThanTodayDirective,
+    DateMaskDirective,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule],
   providers: [ItemService, TaskModalService],

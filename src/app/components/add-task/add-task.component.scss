@@ -72,11 +72,23 @@ form > button {
   gap: 1px;
 }
 
+label {
+  font-weight: bold;
+}
+
 input {
   height: 25px;
+  padding: 0 5px;
+  outline: none;
+}
+
+.erro {
+  font-size: 11px;
+  color: red;
 }
 
 textarea {
   height: 40px;
   resize: none;
+  padding: 0 5px;
 }

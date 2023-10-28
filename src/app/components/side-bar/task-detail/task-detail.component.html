@@ -13,5 +13,11 @@
     <p class="title">Status</p>
     <p>{{ selectedItem.status }}</p>
   </div>
-  <button class="editButton" (click)="editItem()">Editar</button>
+  <button
+    [disabled]="!selectedItem.title"
+    class="editButton"
+    (click)="editItem()"
+  >
+    Editar
+  </button>
 </div>

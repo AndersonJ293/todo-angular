@@ -1,6 +1,3 @@
 import { Task } from '../models/task';
 
-export let Tasks: Task[] = [
-  new Task('a', 'b', '2023-10-01', 'd'),
-  new Task('a', 'b', '2023-10-01', 'd'),
-];
+export let Tasks: Task[] = [new Task('teste', 'teste', '12/10/2023', '12')];
