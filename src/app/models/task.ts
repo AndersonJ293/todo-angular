@@ -13,7 +13,7 @@ export class Task {
     expectedConclusion: string,
     price: string
   ) {
-    this.id = '1';
+    this.id = this.generateRandomId();
     this.title = title;
     this.description = description;
     this.expectedConclusion = expectedConclusion;

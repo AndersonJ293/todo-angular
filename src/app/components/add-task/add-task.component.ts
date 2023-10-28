@@ -74,7 +74,6 @@ export class AddTaskComponent implements OnInit {
         this.form.value.price
       )
     );
-    this.form.reset();
     this.closeModal();
   }
 
@@ -88,12 +87,12 @@ export class AddTaskComponent implements OnInit {
     task.price = this.form.value.price;
     task.status = this.form.value.status;
 
-    this.id = '';
-    this.form.reset();
     this.closeModal();
   }
 
   closeModal() {
     this.taskModal.opened = false;
+    this.id = '';
+    this.form.reset();
   }
 }
