@@ -6,42 +6,94 @@
     </div>
 
     <form [formGroup]="form" (ngSubmit)="onSubmit()">
-      <div class="formInput">
-        <label for="title">Titulo</label>
-        <input type="text" id="title" name="title" formControlName="title" />
-      </div>
+      <div class="inputContainer">
+        <div class="formInput">
+          <label for="title">Titulo</label>
+          <input
+            type="text"
+            id="title"
+            name="title"
+            formControlName="title"
+            [placeholder]="
+              form.get('title')?.hasError('required')
+                ? 'Titulo é obrigatório'
+                : ''
+            "
+            [ngStyle]="
+              form.get('title')?.hasError('required')
+                ? { border: '1px solid red' }
+                : { border: '1px solid black' }
+            "
+          />
+        </div>
 
-      <div class="formInput">
-        <label for="description">Descrição</label>
-        <textarea
-          name="description"
-          id="description"
-          formControlName="description"
-        ></textarea>
-      </div>
+        <div class="formInput">
+          <label for="description">Descrição</label>
+          <textarea
+            name="description"
+            id="description"
+            formControlName="description"
+            [placeholder]="
+              form.get('description')?.hasError('required')
+                ? 'Descrição é obrigatória'
+                : ''
+            "
+            [ngStyle]="
+              form.get('description')?.hasError('required')
+                ? { border: '1px solid red' }
+                : { border: '1px solid black' }
+            "
+          ></textarea>
+        </div>
 
-      <div class="formInput">
-        <label for="expectedConclusion">Conclusão</label>
-        <input
-          type="date"
-          id="expectedConclusion"
-          name="expectedConclusion"
-          formControlName="expectedConclusion"
-        />
-      </div>
+        <div class="formInput">
+          <label for="expectedConclusion">Conclusão Esperada</label>
+          <input
+            type="text"
+            id="expectedConclusion"
+            name="expectedConclusion"
+            formControlName="expectedConclusion"
+            [placeholder]="
+              form.get('expectedConclusion')?.hasError('required')
+                ? 'Conslusão é obrigatória'
+                : ''
+            "
+            [ngStyle]="
+              form.get('expectedConclusion')?.hasError('required')
+                ? { border: '1px solid red' }
+                : { border: '1px solid black' }
+            "
+          />
+        </div>
 
-      <div class="formInput">
-        <label for="price">Preço</label>
-        <input type="text" name="price" id="price" formControlName="price" />
-      </div>
+        <div class="formInput">
+          <label for="price">Preço</label>
+          <input
+            type="text"
+            name="price"
+            id="price"
+            formControlName="price"
+            [placeholder]="
+              form.get('price')?.hasError('required')
+                ? 'Preço é obrigatório'
+                : ''
+            "
+            [ngStyle]="
+              form.get('price')?.hasError('required')
+                ? { border: '1px solid red' }
+                : { border: '1px solid black' }
+            "
+          />
+        </div>
 
-      <div class="formInput" *ngIf="formMode === 'Editar'">
-        <label for="status">Status</label>
-        <select name="status" id="status" formControlName="status">
-          <option *ngFor="let option of selectOptions" value="{{ option }}">
-            {{ option }}
-          </option>
-        </select>
+        <div class="formInput" *ngIf="formMode === 'Editar'">
+          <label for="status">Status</label>
+          <select name="status" id="status" formControlName="status">
+            <option *ngFor="let option of selectOptions" value="{{ option }}">
+              {{ option }}
+            </option>
+          </select>
+        </div>
       </div>
 
       <button type="submit">Salvar</button>

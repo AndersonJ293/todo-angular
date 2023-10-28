@@ -11,10 +11,10 @@ import { TaskModalService } from 'src/app/services/taskModal.service';
 })
 export class AddTaskComponent implements OnInit {
   form: FormGroup = this.formBuilder.group({
-    title: [''],
-    description: [''],
-    expectedConclusion: [''],
-    price: [''],
+    title: ['', [Validators.required]],
+    description: ['', [Validators.required]],
+    expectedConclusion: ['', [Validators.required]],
+    price: ['', [Validators.required]],
     status: [''],
   });
 
