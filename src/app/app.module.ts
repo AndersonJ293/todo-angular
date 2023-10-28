@@ -17,6 +17,7 @@ import { ItemService } from './services/item.service';
 import { TaskModalService } from './services/taskModal.service';
 import { DateLessThanTodayDirective } from './directives/date-less-than-today.directive';
 import { DateMaskDirective } from './directives/date-mask.directive';
+import { CurrencyFormatterPipe } from './pipes/currency-formatter.pipe';
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,6 +32,7 @@ import { DateMaskDirective } from './directives/date-mask.directive';
     LogsComponent,
     DateLessThanTodayDirective,
     DateMaskDirective,
+    CurrencyFormatterPipe,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule],
   providers: [ItemService, TaskModalService],

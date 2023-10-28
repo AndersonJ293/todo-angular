@@ -4,6 +4,12 @@
   </div>
   <div class="info">
     <p>{{ task.expectedConclusion }}</p>
-    <p>{{ task.price }}</p>
+    <p>
+      {{
+        task.price
+          | currencyFormatter
+            : { style: "currency", currency: "BRL", fractionDigits: 2 }
+      }}
+    </p>
   </div>
 </div>
